@@ -17,6 +17,10 @@ compile '/stylesheet/' do
   # don’t filter or layout
 end
 
+compile '/CNAME/' do
+  #don't
+end
+
 compile '*' do
   if item.binary?
     # don’t filter binary items
@@ -28,6 +32,10 @@ end
 
 route '/stylesheet/' do
   '/style.css'
+end
+
+route '/CNAME/' do
+  item.identifier.chop
 end
 
 route '*' do
